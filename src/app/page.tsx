@@ -62,8 +62,8 @@ export default function Home() {
           <div className="grid gap-5">
             {!ready ? (
               <div className="rounded-3xl border border-rose-200 bg-rose-50 p-5 text-sm text-rose-900">
-                Add your Supabase keys to <code>.env.local</code> before
-                creating rooms. The UI is ready, but room creation needs the
+                Configure your Supabase environment variables before creating
+                rooms. The UI is ready, but room creation needs a working
                 database connection.
               </div>
             ) : null}
