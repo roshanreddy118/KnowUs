@@ -6,6 +6,7 @@ import {
   startGameAction,
   submitAnswerAction,
 } from "@/app/actions";
+import { CopyRoomCodeButton } from "@/app/room/[code]/copy-room-code-button";
 import { RoomLiveUpdater } from "@/app/room/[code]/room-live-updater";
 import {
   getFinalAnswerGrid,
@@ -62,6 +63,24 @@ export default async function RoomPage({
             <span>Status: {room.status}</span>
           </div>
         </div>
+
+        <section className="flex flex-wrap items-center justify-between gap-4 rounded-[1.75rem] border border-amber-300/20 bg-amber-300/10 p-5">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-200">
+              Share this room code
+            </p>
+            <div className="mt-2 flex items-center gap-3">
+              <span className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-2xl font-black tracking-[0.3em] text-white">
+                {room.code}
+              </span>
+              <CopyRoomCodeButton code={room.code} />
+            </div>
+          </div>
+          <p className="max-w-lg text-sm leading-7 text-slate-200">
+            Send this code to the other players so they can join from the home
+            page.
+          </p>
+        </section>
 
         <section className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
